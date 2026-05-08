@@ -1,0 +1,30 @@
+# Python cache and environment files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Generated datasets
+data/processed_data.csv
+data/X_train.csv
+data/X_val.csv
+data/X_test.csv
+data/y_train.csv
+data/y_val.csv
+data/y_test.csv
+
+# Generated reports and plots
+reports/
+
+# Large or reproducible model artifacts
+graphs/models/*.pkl
+
+# Optional local OS files
+.DS_Store
+Thumbs.db
