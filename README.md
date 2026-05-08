@@ -48,6 +48,28 @@ The training step compares the following models:
 - XGBoost
 - LightGBM
 
+## Results
+
+The current experiment shows a clear trade-off between raw training performance and generalization. The table below summarizes the key metrics reported for the train and test splits.
+
+| Model | Split | Accuracy | Precision | Recall | F1-Score | ROC-AUC |
+|---|---|---:|---:|---:|---:|---:|
+| Logistic Regression | Train | 0.6720 | 0.6831 | 0.6418 | 0.6618 | 0.7247 |
+| Logistic Regression | Test | 0.6680 | 0.6774 | 0.6417 | 0.6590 | 0.7235 |
+| Random Forest | Train | 0.9995 | 0.9991 | 0.9999 | 0.9995 | 1.0000 |
+| Random Forest | Test | 0.9294 | 0.9070 | 0.9569 | 0.9313 | 0.9779 |
+| XGBoost | Train | 0.8706 | 0.8733 | 0.8671 | 0.8702 | 0.9475 |
+| XGBoost | Test | 0.8066 | 0.8083 | 0.8037 | 0.8060 | 0.8915 |
+| LightGBM | Train | 0.7904 | 0.8180 | 0.7472 | 0.7810 | 0.8841 |
+| LightGBM | Test | 0.7598 | 0.7899 | 0.7078 | 0.7466 | 0.8503 |
+
+Key findings:
+
+- Random Forest achieved the strongest raw scores but also showed the largest train-test gap, which indicates overfitting.
+- XGBoost offered the best balance between predictive power and generalization in this experiment.
+- Recall is especially important in credit risk, because missing a default is more costly than raising a false alarm.
+- SHAP analysis identified recent repayment behavior, especially `PAY_0`, and credit limit `LIMIT_BAL` as the most influential features.
+
 ## Project Structure
 
 ```text
